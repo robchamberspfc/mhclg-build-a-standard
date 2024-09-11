@@ -1,22 +1,27 @@
-<div class="row mb-3">
+<div class="row mb-3 bg-body-tertiary">
     <div class="col-md-12">
         <h2>Data model basket</h2>
         <h3>Codelists</h3>
         <div id="codelistsBasket"></div>
+        <hr>
         <h3>Fields</h3>
         <div id="fieldsBasket"></div>
+        <hr>
         <h3>Custom</h3>
         <h4>Codelists</h4>
         <div id="customCodelistsBasket"></div>
+        <hr>
         <h4>Fields</h4>
         <div id="customFieldsBasket"></div>
+        <hr>
     </div>
+    <button type="button" class="btn btn-secondary" onclick="resetPage()">Clear basket</button>
 </div>
 <script>
     const codelists = document.getElementById("codelistsBasket")
     const fields = document.getElementById("fieldsBasket")
     const customCodelists = document.getElementById("customCodelistsBasket")
     const customFields = document.getElementById("customFieldsBasket")
-    
-    updateBasket() 
+
+    updateBasket()
 </script>

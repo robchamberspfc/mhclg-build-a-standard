@@ -13,6 +13,7 @@ title: Search standards
                             <label class="" for="search">Search for a Standard</label>
                             <input class="" id="search" name="search" type="text" onkeyup="filterList('standardsList')"
                                 class="form-control form-control-lg" placeholder="" autocomplete="off">
+                            <p><a href = "#">Filter by category</a></p>
                         </div>
                     </form>
                     </div>
@@ -20,14 +21,14 @@ title: Search standards
                         <ul id="standardsList" class="">
                             {%- for item in standards -%}
                             <li id='listItem-{{item.Name}}'>
-                                <a class="" onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">{{ item.Name }}</a>
+                                <strong>{{ item.Name }} </strong><a class="" onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">Add to model</a>
                                 <p>{{ item.Description }}</p>
                             </li>
                             {%- endfor -%}
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4">{% include "basket.html" %}</div>
+                <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
             </div>
         </div>
 </main>
