@@ -5,9 +5,37 @@ title: Add fields
 
 <main role="main" id="content" tabindex="-1">
     <div class="container">
-        <div class="row mb-3">
-            <div class="col-md-8">.col-md-8</div>
-            <div class="col-md-4">{% include "basket.html" %}</div>  
+        <h1>Build your data model</h1>
+        <div class="row">
+            <p><a href="/search-standards">Add standard codelists/taxonomies</a> | Add data fields | <a href="">Add custom codelists</a> | <a href="">Add custom fields</a></p>
+            <hr>
+            <div class="col-md-8">
+                
+                
+                <h2>Add data fields</h2>
+                <div class="row mb-5">
+                    <form>
+                        <div class="">
+                            <label class="" for="search">Search for a data field</label>
+                            <input class="" id="search" name="search" type="text" onkeyup="filterList('standardsList')"
+                                class="form-control form-control-lg" placeholder="" autocomplete="off">
+                            <p><a href = "#">Filter by Entity</a></p>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="row mb-3">
+                        <ul id="standardsList" class="">
+                            {%- for item in fields -%}
+                            <li id='listItem-{{item.Name}}'>
+                                <strong>{{ item.Name }} </strong><a class="" onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`fields`)">Add to model</a>
+                                <p>{{ item.Description }}</p>
+                                <p>Entity: {{ item.Entity }}</p>
+                            </li>
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
+            </div>
         </div>
-    </div>
 </main>

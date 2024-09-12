@@ -1,4 +1,5 @@
 filterList = (listName) => {
+    console.log(listName)
     let input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('search');
     filter = input.value.toUpperCase();
@@ -6,8 +7,8 @@ filterList = (listName) => {
     li = ul.getElementsByTagName('li');
 
     for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
+        // a = li[i].getElementsByTagName("strong")[0];
+        txtValue = li[i].textContent || li[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
