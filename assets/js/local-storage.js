@@ -14,18 +14,14 @@ if (projectData.length == 0) {
         })
 }
 
-writeLocalStorage = (data,name,route) => {
+writeLocalStorage = (data, name, route) => {
     console.log(name)
     localStorage.setItem('basketData', JSON.stringify(data));
     //take the name provided and dynamically build the function name to call to update the page
-    this["update"+name](route)
+    this["update" + name](route)
 }
 
 resetPage = () => {
     localStorage.clear();
     location.reload();
 }
-
-// dismissAlert = () => {
-//     localStorage.setItem('datasetAlertDismissed', "True");
-// }

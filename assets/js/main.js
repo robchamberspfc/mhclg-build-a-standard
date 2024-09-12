@@ -16,5 +16,3 @@ filterList = (listName) => {
         }
     }
 }
-
-

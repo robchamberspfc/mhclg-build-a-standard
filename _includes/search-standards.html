@@ -7,11 +7,12 @@ title: Search standards
     <div class="container">
         <h1>Build your data model</h1>
         <div class="row">
-            <p>Add standard codelists/taxonomies | <a href="/add-fields">Add data fields</a> | <a href="">Add custom codelists</a> | <a href="">Add custom fields</a></p>
+            <p>Add standard codelists/taxonomies | <a href="/add-fields">Add data fields</a> | <a href="">Add custom
+                    codelists</a> | <a href="">Add custom fields</a></p>
             <hr>
             <div class="col-md-8">
-                
-                
+
+
                 <h2>Add standard codelists/taxonomies</h2>
                 <div class="row mb-5">
                     <form>
@@ -19,23 +20,24 @@ title: Search standards
                             <label class="" for="search">Search for a Standard</label>
                             <input class="" id="search" name="search" type="text" onkeyup="filterList('standardsList')"
                                 class="form-control form-control-lg" placeholder="" autocomplete="off">
-                            <p><a href = "#">Filter by category</a></p>
+                            <p><a href="#">Filter by category</a></p>
                         </div>
                     </form>
-                    </div>
-                    <div class="row mb-3">
-                        <ul id="standardsList" class="">
-                            {%- for item in standards -%}
-                            <li id='listItem-{{item.Name}}'>
-                                <strong>{{ item.Name }} </strong><a class="" onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">Add to model</a>
-                                <p>{{ item.Description }}</p>
-                                <p>Category: {{ item.Category }}</p>
-                            </li>
-                            {%- endfor -%}
-                        </ul>
-                    </div>
                 </div>
-                <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
+                <div class="row mb-3">
+                    <ul id="standardsList" class="">
+                        {%- for item in standards -%}
+                        <li id='listItem-{{item.Name}}'>
+                            <strong>{{ item.Name }} </strong><a class=""
+                                onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">Add to model</a>
+                            <p>{{ item.Description }}</p>
+                            <p>Category: {{ item.Category }}</p>
+                        </li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
             </div>
+            <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
         </div>
+    </div>
 </main>

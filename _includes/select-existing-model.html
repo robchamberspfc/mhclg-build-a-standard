@@ -4,38 +4,39 @@ title: Add fields
 ---
 
 <main role="main" id="content" tabindex="-1"></main>
-    <div class="container">
-        <h1>Start with a template</h1>
-        <div class="row">
-            <p><a href="/search-standards">Add standard codelists/taxonomies</a> | <a href="/add-fields">Add data fields</a> | <a href="">Add custom codelists</a> | <a href="">Add custom fields</a></p>
-            <hr>
-            <div class="col-md-8">
-                
-                
-                <h2>Add data fields and codelists from template</h2>
-                <div class="row mb-5">
-                    <form>
-                        <div class="">
-                            <label class="" for="search">Search for a template</label>
-                            <input class="" id="search" name="search" type="text" onkeyup="filterList('standardsList')"
-                                class="form-control form-control-lg" placeholder="" autocomplete="off">
-                        </div>
-                    </form>
+<div class="container">
+    <h1>Start with a template</h1>
+    <div class="row">
+        <p><a href="/search-standards">Add standard codelists/taxonomies</a> | <a href="/add-fields">Add data fields</a>
+            | <a href="">Add custom codelists</a> | <a href="">Add custom fields</a></p>
+        <hr>
+        <div class="col-md-8">
+            <h2>Add data fields and codelists from template</h2>
+            <div class="row mb-5">
+                <form>
+                    <div class="">
+                        <label class="" for="search">Search for a template</label>
+                        <input class="" id="search" name="search" type="text" onkeyup="filterList('standardsList')"
+                            class="form-control form-control-lg" placeholder="" autocomplete="off">
                     </div>
-                    <div class="row mb-3">
-                        <ul id="standardsList" class="">
-                            {%- for item in templates -%}
-                            <li id='listItem-{{item.Name}}'>
-                                <strong>{{ item.Name }} </strong>
-                                    <a class="" onclick="selectTemplate('{{ item.ID }}',`/download`)">Select and download model</a> | 
-                                    <a class="" onclick="selectTemplate('{{ item.ID }}',`/search-standards`)">Select and customise</a>
-                                <p>{{ item.Description }}</p>
-                            </li>
-                            {%- endfor -%}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
+                </form>
+            </div>
+            <div class="row mb-3">
+                <ul id="standardsList" class="">
+                    {%- for item in templates -%}
+                    <li id='listItem-{{item.Name}}'>
+                        <strong>{{ item.Name }} </strong>
+                        <a class="" onclick="selectTemplate('{{ item.ID }}',`/download`)">Select and download model</a>
+                        |
+                        <a class="" onclick="selectTemplate('{{ item.ID }}',`/search-standards`)">Select and
+                            customise</a>
+                        <p>{{ item.Description }}</p>
+                    </li>
+                    {%- endfor -%}
+                </ul>
             </div>
         </div>
+        <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
+    </div>
+</div>
 </main>
