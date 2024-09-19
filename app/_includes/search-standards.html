@@ -25,7 +25,7 @@ title: Search standards
                     </form>
                 </div>
                 <div class="row mb-3">
-                    <ul id="standardsList" class="">
+                    <ul id="standardsList" class="list-unstyled">
                         {%- for item in standards -%}
                         <li id='listItem-{{item.Name}}'>
                             <strong>{{ item.Name }} </strong><a class=""
@@ -33,6 +33,7 @@ title: Search standards
                             <p>{{ item.Description }}</p>
                             <p>Category: {{ item.Category }}</p>
                         </li>
+                        <hr>
                         {%- endfor -%}
                     </ul>
                 </div>

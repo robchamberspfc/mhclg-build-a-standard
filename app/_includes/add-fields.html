@@ -23,7 +23,7 @@ title: Add fields
                     </form>
                 </div>
                 <div class="row mb-3">
-                    <ul id="standardsList" class="">
+                    <ul id="standardsList" class="list-unstyled">
                         {%- for item in fields -%}
                         <li id='listItem-{{item.Name}}'>
                             <strong>{{ item.Name }} </strong><a class=""
@@ -31,6 +31,7 @@ title: Add fields
                             <p>{{ item.Description }}</p>
                             <p>Entity: {{ item.Entity }}</p>
                         </li>
+                        <hr>
                         {%- endfor -%}
                     </ul>
                 </div>
