@@ -7,7 +7,8 @@ title: Add fields
     <div class="container">
         <h1>Build your data model</h1>
         <div class="row">
-            <p><a href="/search-standards">Add standard codelists/taxonomies</a> | Add data fields | <a href="/add-custom-codelists">Add
+            <p><a href="/search-standards">Add standard codelists/taxonomies</a> | Add data fields | <a
+                    href="/add-custom-codelists">Add
                     custom codelists</a> | <a href="/add-custom-fields">Add custom fields</a></p>
             <hr>
             <div class="col-md-8">
@@ -30,8 +31,8 @@ title: Add fields
                                 onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`fields`)">Add to model</a>
                             <p>{{ item.Description }}</p>
                             <p>Entity: {{ item.Entity }}</p>
+                            <hr>
                         </li>
-                        <hr>
                         {%- endfor -%}
                     </ul>
                 </div>
