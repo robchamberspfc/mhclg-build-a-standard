@@ -32,4 +32,5 @@ for (i=0;i<files.length;i++) {
 }
 
 let json = JSON.stringify(templates);
-fs.writeFileSync('template.json', json);
+fs.writeFileSync('../../app/assets/data/templates.json', json);
+fs.writeFileSync('../../app/_data/templates.json', json);
