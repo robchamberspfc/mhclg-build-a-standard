@@ -7,8 +7,9 @@ title: Search standards
     <div class="container">
         <h1>Build your data model</h1>
         <div class="row">
-            <p>Add standard codelists/taxonomies | <a href="/add-fields">Add data fields</a> | <a href="/add-custom-codelists">Add
-                custom codelists</a> | <a href="/add-custom-fields">Add custom fields</a></p>
+            <p>Add standard codelists/taxonomies | <a href="/add-fields">Add data fields</a> | <a
+                    href="/add-custom-codelists">Add
+                    custom codelists</a> | <a href="/add-custom-fields">Add custom fields</a></p>
             <hr>
             <div class="col-md-8">
 
@@ -28,10 +29,16 @@ title: Search standards
                     <ul id="standardsList" class="list-unstyled">
                         {%- for item in standards -%}
                         <li id='listItem-{{item.Name}}'>
-                            <strong>{{ item.Name }} </strong><a class=""
-                                onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">Add to model</a>
+                            <strong>{{ item.Name }} </strong>
                             <p>{{ item.Description }}</p>
                             <p>Category: {{ item.Category }}</p>
+                            <!-- Trigger modal -->
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Explore this standard
+                            </a>
+                            |
+                            <a class=""
+                                onclick="basketDataAdd('{{ item.ID }}','{{ item.Name }}',`codelists`)">Add to model</a>
                             <hr>
                         </li>
                         {%- endfor -%}
@@ -40,5 +47,9 @@ title: Search standards
             </div>
             <div class="col-md-4 bg-body-tertiary">{% include "basket.html" %}</div>
         </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {% include "standard-details.html" %}
     </div>
 </main>
